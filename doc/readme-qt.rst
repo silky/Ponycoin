@@ -1,4 +1,4 @@
-Litecoin-Qt: Qt4 GUI for Litecoin
+Litecoin-Qt: Qt4 GUI for Ponycoin
 ===============================
 
 Build instructions

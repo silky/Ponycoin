@@ -7,6 +7,9 @@ http://pr.saltyhashes.com/blog/introducing-the-weirdest-bitcoin-derivative-yet/
 Ponycoin Copyright (c) 2013 Josh and Contributers
 Bitcoin Copyright (c) 2009-2013 Bitcoin Core Developers
 
+* RPC 9338
+* P2P 9339
+
 What is Bitcoin?
 ----------------
 
@@ -70,3 +73,14 @@ Q: Should I invest in ponycoins?
 
 Q: Do you think something like bronycon or EQD will use these things in the future?
 * A: Maybe.
+
+Documentation on the Ponycoin algorithm used to distribute coins:
+-----------------------------------------------------------------
+
+* For the first 60,000 coins: 1 + (sqrt(nHeight)*64) reward.
+* For the first 120,000 coins: 1 + (sqrt(nHeight)*32) reward.
+* For the first 240,000 coins: 1 + (sqrt(nHeight)*16) reward.
+* For the first 480,000 coins: 1 + (sqrt(nHeight)*8) reward.
+* For the first 960,000 coins: 1 + (sqrt(nHeight)*4) reward.
+* For the first 1,920,000 coins: 1 + (sqrt(nHeight)*2) reward.
+* All other blocks past 1,920,000: Cut in half every 2,560,000 blocks.
