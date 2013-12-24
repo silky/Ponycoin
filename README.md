@@ -5,6 +5,7 @@ Just when you though the bitcoin fad couldn't get any weirder...
 http://pr.saltyhashes.com/blog/introducing-the-weirdest-bitcoin-derivative-yet/
 
 Ponycoin Copyright (c) 2013 Josh and Contributers
+
 Bitcoin Copyright (c) 2009-2013 Bitcoin Core Developers
 
 * RPC 9338
@@ -43,7 +44,7 @@ the terms of the MIT license as well.
 Development process
 -------------------
 
-Fork from bitcoin->Change stuff that I don't want in ponycoin->Merge with ponycoin.
+Fork from bitcoin/litecoin->Change stuff that I don't want in ponycoin->Merge with ponycoin.
 
 Q/A
 ---
