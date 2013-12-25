@@ -1103,6 +1103,11 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
         // Subsidy is cut in half every 256,000 blocks after 1,920,000 blocks
         nSubsidy = (int64) (1 + sqrt(nHeight)) * COIN;
         nSubsidy >>= (int64) (nHeight / 256000);
+
+        // Make sure we don't dip below a reward of 64 Ponycoins
+        if (nSubsidy < (64 * COIN)) {
+            nSubsidy = 64 * COIN;
+        }
     }
 
     return nSubsidy + nFees;
