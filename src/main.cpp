@@ -1102,7 +1102,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
         // Subsidy is cut in half every 256,000 blocks after 1,920,000 blocks
         nSubsidy = (int64) (1 + sqrt(nHeight)) * COIN;
-        int64 nSubsidy >>= (int64) (nHeight / 256000);
+        nSubsidy >>= (int64) (nHeight / 256000);
     }
 
     return nSubsidy + nFees;
@@ -2820,7 +2820,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(block.hashMerkleRoot == uint256("0x8a998ff3155b9f7792de040a48e773dc80a75a1258174d8b881e80eb4b31836e")); // The Ponycoin Merkel hash
         block.print();
         assert(hash == hashGenesisBlock);
 
