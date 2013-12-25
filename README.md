@@ -96,3 +96,5 @@ Coin values
 * BITS = 1 Ponycoin
 * mBITS = 1/1000 of a BIT
 * μBITS = 1/1,000,000 of a BIT
+
+![alt text](http://i42.tinypic.com/2h6rj9y.png "The Ponycoin logo")
