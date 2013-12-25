@@ -85,7 +85,7 @@ Documentation on the Ponycoin distribution algorithm
 * For the first 480,000 coins: 1 + (sqrt(nHeight)*8) reward.
 * For the first 960,000 coins: 1 + (sqrt(nHeight)*4) reward.
 * For the first 1,920,000 coins: 1 + (sqrt(nHeight)*2) reward.
-* All other blocks past 1,920,000: Cut in half every 2,560,000 blocks.
+* All other blocks past 1,920,000: Cut in half every 256,000 blocks.
 
 * Block target completion time: 1.5 Minutes
 * Block difficulty adjustment interval: 12 Hours

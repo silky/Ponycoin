@@ -1073,34 +1073,38 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
  */
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    // Subsidy is cut in half every 2,560,000 blocks after 1,920,000 blocks
-    int64 nSubsidy >>= (int64) (nHeight / 2560000);
-      
-    if(nHeight < 60000)    
+    int64 nSubsidy = 0; // Initialize nSubsidy
+    if(nHeight < 60000)
     {
         nSubsidy = (int64) (1 + sqrt(nHeight) * 64) * COIN;
     }
-    else if(nHeight < 120000)      
+    else if(nHeight >= 60000 && nHeight < 120000)
     {
-         nSubsidy = (int64) ((1 + sqrt(nHeight) * 32) * COIN;
+         nSubsidy = (int64) (1 + sqrt(nHeight) * 32) * COIN;
     }
-    else if(nHeight < 240000)      
+    else if(nHeight >= 120000 && nHeight < 240000)
     {
         nSubsidy = (int64) (1 + sqrt(nHeight) * 16) * COIN;
     }
-    else if(nHeight < 480000)      
+    else if(nHeight >= 240000 && nHeight < 480000)
     {
         nSubsidy = (int64) (1 + sqrt(nHeight) * 8) * COIN;
     }
-    else if(nHeight < 960000)      
+    else if(nHeight >= 480000 && nHeight < 960000)
     {
         nSubsidy = (int64) (1 + sqrt(nHeight) * 4) * COIN;
     }
-    else if(nHeight < 1920000)      
+    else if(nHeight >= 960000 && nHeight < 1920000)
     {
         nSubsidy = (int64) (1 + sqrt(nHeight) * 2) * COIN;
     }
- 
+    else if(nHeight >= 1920000)
+    {
+        // Subsidy is cut in half every 256,000 blocks after 1,920,000 blocks
+        nSubsidy = (int64) (1 + sqrt(nHeight)) * COIN;
+        int64 nSubsidy >>= (int64) (nHeight / 256000);
+    }
+
     return nSubsidy + nFees;
 }
 
