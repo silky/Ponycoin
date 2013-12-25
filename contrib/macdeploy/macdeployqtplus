@@ -149,7 +149,7 @@ class FrameworkInfo(object):
 class ApplicationBundleInfo(object):
     def __init__(self, path):
         self.path = path
-        appName = os.path.splitext(os.path.basename(path))[0]
+        appName = os.path.spponyxt(os.path.basename(path))[0]
         self.binaryPath = os.path.join(path, "Contents", "MacOS", appName)
         if not os.path.exists(self.binaryPath):
             raise RuntimeError("Could not find bundle binary for " + path)
@@ -459,7 +459,7 @@ if not os.path.exists(app_bundle):
         sys.stderr.write("Error: Could not find app bundle \"%s\"\n" % (app_bundle))
     sys.exit(1)
 
-app_bundle_name = os.path.splitext(os.path.basename(app_bundle))[0]
+app_bundle_name = os.path.spponyxt(os.path.basename(app_bundle))[0]
 
 # ------------------------------------------------
 
@@ -763,7 +763,7 @@ if config.dmg is not None:
                 items_positions.append(itemscript.substitute(params))
 
         params = {
-            "disk" : "Litecoin-Qt",
+            "disk" : "Ponycoin-Qt",
             "window_bounds" : "300,300,800,620",
             "icon_size" : "96",
             "background_commands" : "",

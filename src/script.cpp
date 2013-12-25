@@ -1493,7 +1493,7 @@ bool VerifyScript(const CScript& scriptSig, const CScript& scriptPubKey, const C
     // Additional validation for spend-to-script-hash transactions:
     if ((flags & SCRIPT_VERIFY_P2SH) && scriptPubKey.IsPayToScriptHash())
     {
-        if (!scriptSig.IsPushOnly()) // scriptSig must be literals-only
+        if (!scriptSig.IsPushOnly()) // scriptSig must be ponyrals-only
             return false;            // or validation fails
 
         // stackCopy cannot be empty here, because if it was the

@@ -1,4 +1,4 @@
-Ponycoin, an equestion cryptocurrency
+﻿Ponycoin, an equestrian cryptocurrency
 =====================================
 Just when you though the bitcoin fad couldn't get any weirder...
 
