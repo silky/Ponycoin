@@ -1191,17 +1191,17 @@ void MapPort(bool)
 // Each pair gives a source name and a seed name.
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
+
+// Ponycoin Todo: Add an official ponycoin seed node
 static const char *strMainNetDNSSeed[][2] = {
-    {"ponycointools.com", "dnsseed.ponycointools.com"},
-    {"ponycoinpool.org", "dnsseed.ponycoinpool.org"},
     {"xurious.com", "dnsseed.ltc.xurious.com"},
     {"koin-project.com", "dnsseed.koin-project.com"},
     {"weminemnc.com", "dnsseed.weminemnc.com"},
     {NULL, NULL}
 };
 
+// Ponycoin Todo: Add an official ponycoin testnet seed node
 static const char *strTestNetDNSSeed[][2] = {
-    {"ponycointools.com", "testnet-seed.ponycointools.com"},
     {"weminemnc.com", "testnet-seed.weminemnc.com"},
     {NULL, NULL}
 };

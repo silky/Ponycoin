@@ -78,8 +78,7 @@ Q: Do you think something like bronycon or EQD will use these things in the futu
 
 Documentation on the Ponycoin distribution algorithm
 -----------------------------------------------------------------
-* Ponycoins use the same address type as Litecoins. (As ponycoins are based on litecoins)
-* There are a total of 100,000,000,000 avaiable coins (BITS).
+* There are a total of 100,000,000 (100M) avaiable coins (BITS).
 * For the first 60,000 coins: 1 + (sqrt(nHeight)*64) reward.
 * For the first 120,000 coins: 1 + (sqrt(nHeight)*32) reward.
 * For the first 240,000 coins: 1 + (sqrt(nHeight)*16) reward.
@@ -87,6 +86,9 @@ Documentation on the Ponycoin distribution algorithm
 * For the first 960,000 coins: 1 + (sqrt(nHeight)*4) reward.
 * For the first 1,920,000 coins: 1 + (sqrt(nHeight)*2) reward.
 * All other blocks past 1,920,000: Cut in half every 2,560,000 blocks.
+
+* Block target completion time: 1.5 Minutes
+* Block difficulty adjustment interval: 12 Hours
 
 Coin values
 -----------

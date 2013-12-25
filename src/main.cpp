@@ -1078,37 +1078,34 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
       
     if(nHeight < 60000)    
     {
-        nSubsidy = (int64) (1 + sqrt(nHeight) * 64);
+        nSubsidy = (int64) (1 + sqrt(nHeight) * 64) * COIN;
     }
     else if(nHeight < 120000)      
     {
-         nSubsidy = (int64) ((1 + sqrt(nHeight) * 32);
+         nSubsidy = (int64) ((1 + sqrt(nHeight) * 32) * COIN;
     
     else if(nHeight < 240000)      
     {
-        nSubsidy = (int64) (1 + sqrt(nHeight) * 16);
+        nSubsidy = (int64) (1 + sqrt(nHeight) * 16) * COIN;
     }
     else if(nHeight < 480000)      
     {
-        nSubsidy = (int64) (1 + sqrt(nHeight) * 8);
+        nSubsidy = (int64) (1 + sqrt(nHeight) * 8) * COIN;
     }
     else if(nHeight < 960000)      
     {
-        nSubsidy = (int64) (1 + sqrt(nHeight) * 4);
+        nSubsidy = (int64) (1 + sqrt(nHeight) * 4) * COIN;
     }
     else if(nHeight < 1920000)      
     {
-        nSubsidy = (int64) (1 + sqrt(nHeight) * 2);
+        nSubsidy = (int64) (1 + sqrt(nHeight) * 2) * COIN;
     }
  
     return nSubsidy + nFees;
 }
 
-    // Subsidy is cut in half every 256000 blocks
-    nSubsidy >>= (nHeight / 256000); // Ponycoin: 256k blocks
-
-static const int64 nTargetTimespan = 3.5 * 24 * 60 * 60; // Ponycoin: 3.5 days
-static const int64 nTargetSpacing = 2.5 * 60; // Ponycoin: 2.5 minutes
+static const int64 nTargetTimespan = 12 * 60 * 60; // Ponycoin: 12 hours
+static const int64 nTargetSpacing = 1.5 * 60; // Ponycoin: 1.5 minutes
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -2792,7 +2789,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "NY Times 05/Oct/2011 Steve Jobs, Apple’s Visionary, Dies at 56";
+        const char* pszTimestamp = "On October 10, 2010, Hasbro premeired the Pilot of My Little Pony: Friendship Is Magic";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2804,13 +2801,13 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1317972665;
+        block.nTime    = 1387943469; // Epoch of Ponycoins (in UNIX time format)
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2084524493;
-
+ // Epoch
         if (fTestNet)
         {
-            block.nTime    = 1317798646;
+            block.nTime    = 1387943469; // Epoch of Ponycoins (in UNIX time format)
             block.nNonce   = 385270584;
         }
 
