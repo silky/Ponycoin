@@ -31,8 +31,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-// Ponycoin, TODO: generate unique genesis block
-uint256 hashGenesisBlock("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2");
+uint256 hashGenesisBlock("0xa9976ece64b38b0a5355aaafab4d188bcaf294c7132587a96e957ca43ef491d7"); // The main ponycoin Genesis Block
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Ponycoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2765,7 +2764,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0xe622f8c12ab1c6315864a380ef1a15c671a402e7aeda652e33511e6fb6111630"); // The Ponycoin Genesis block
+        hashGenesisBlock = uint256("0xe622f8c12ab1c6315864a380ef1a15c671a402e7aeda652e33511e6fb6111630"); // The Ponycoin testnet Genesis block
     }
 
     //
@@ -2810,14 +2809,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1387943469; // Epoch of Ponycoins (in UNIX time format)
+        block.nTime    = 1388037069; // Epoch of Ponycoins (in UNIX time format)
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2084524493;
+        block.nNonce   = 2084658360; // The Ponycoin Nonce value
  // Epoch
         if (fTestNet)
         {
-            block.nTime    = 1387943469; // Epoch of Ponycoins (in UNIX time format)
-            block.nNonce   = 387281900; // The Ponycoin Nonce value
+            block.nTime    = 1387943469; // Epoch of Ponycoins (testnet) (in UNIX time format)
+            block.nNonce   = 387281900; // The Ponycoin testnet Nonce value
         }
 
         //// debug print
