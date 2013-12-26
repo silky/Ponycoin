@@ -2765,7 +2765,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xdc;
-        hashGenesisBlock = uint256("0xf5ae71e26c74beacc88382716aced69cddf3dffff24f384e1808905e0188f68f");
+        hashGenesisBlock = uint256("0xe622f8c12ab1c6315864a380ef1a15c671a402e7aeda652e33511e6fb6111630"); // The Ponycoin Genesis block
     }
 
     //
@@ -2817,7 +2817,7 @@ bool InitBlockIndex() {
         if (fTestNet)
         {
             block.nTime    = 1387943469; // Epoch of Ponycoins (in UNIX time format)
-            block.nNonce   = 385270584;
+            block.nNonce   = 387281900; // The Ponycoin Nonce value
         }
 
         //// debug print
