@@ -70,7 +70,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     prevBlocks(0)
 {
     restoreWindowGeometry();
-    setWindowTitle(tr("Ponycoin") + " - " + tr("Wallet"));
+    setWindowTitle(tr("Ponycoin") + " - " + tr("Wallet (Beta)"));
 #ifndef Q_OS_MAC
     QApplication::setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -78,6 +78,13 @@ BitcoinGUI::BitcoinGUI(QWidget *parent) :
     setUnifiedTitleAndToolBarOnMac(true);
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
+
+    //specify a new font.
+    QFont eqFont("Equestria", 18);
+
+    //set font of application
+    QApplication::setFont(eqFont);
+
     // Create wallet frame and make it the central widget
     walletFrame = new WalletFrame(this);
     setCentralWidget(walletFrame);
